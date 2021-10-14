@@ -33,4 +33,5 @@
     path: "{{ limesurvey_http_rootdir }}/{{ limesurvey_domain }}"
     owner: "{{ limesurvey_http_user }}"
     group: "{{ limesurvey_http_group }}"
+    recurse: true
     mode: '0755'
