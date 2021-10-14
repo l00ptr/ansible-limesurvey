@@ -24,7 +24,7 @@
 - name: LIMESURVEY CONF | Create empty configuration file
   ansible.builtin.template:
     src: "config.php.j2"
-    dest: "{{ limesurvey_http_rootdir }}/{{ limesurvey_domain }}/conf/conf.php"
+    dest: "{{ limesurvey_http_rootdir }}/{{ limesurvey_domain }}/application/config/config.php"
     owner: "{{ limesurvey_http_user }}"
     group: "{{ limesurvey_http_group }}"
 
