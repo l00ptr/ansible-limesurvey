@@ -11,3 +11,4 @@ limesurvey_db_host: localhost
 limesurvey_db_user: limesurvey
 limesurvey_db_password: limepassword
 limesurvey_db_name: limesurvey
+limesurvey_db_port: 5432
