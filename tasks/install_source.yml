@@ -22,9 +22,11 @@
   delegate_to: "{{ inventory_hostname }}"
 
 - name: LIMESURVEY CONF | Create empty configuration file
-  ansible.builtin.file:
-    path: "{{ limesurvey_http_rootdir }}/{{ limesurvey_domain }}/conf/conf.php"
-    state: touch
+  ansible.builtin.template:
+    src: "config.php.j2"
+    dest: "{{ limesurvey_http_rootdir }}/{{ limesurvey_domain }}/conf/conf.php"
+    owner: "{{ limesurvey_http_user }}"
+    group: "{{ limesurvey_http_group }}"
 
 - name: LIMESURVEY WEB DIR | Set web server owner of limesurvey files
   ansible.builtin.file:
