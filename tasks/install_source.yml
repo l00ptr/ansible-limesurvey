@@ -34,4 +34,15 @@
     owner: "{{ limesurvey_http_user }}"
     group: "{{ limesurvey_http_group }}"
     recurse: true
+    mode: '0650'
+- name: LIMESURVEY WEB DIR | Set web server owner of limesurvey files
+  ansible.builtin.file:
+    path: "{{ limesurvey_http_rootdir }}/{{ limesurvey_domain }}/{{item}}"
+    owner: "{{ limesurvey_http_user }}"
+    group: "{{ limesurvey_http_group }}"
+    recurse: true
     mode: '0755'
+  loop:
+    - tmp/
+    - upload/
+    - application/config/
