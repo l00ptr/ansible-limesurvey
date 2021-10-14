@@ -1,0 +1,37 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+return array(
+  'components' => array(
+    'db' => array(
+      'connectionString' => 'pgsql:host={{ limesurvey_db_host }};port={{ limesurvey_db_port }};user={{ limesurvey_db_user }};password={{ limesurvey_db_password }};dbname={{ limesurvey_db_name }};',
+      'emulatePrepare' => true,
+      'username' => '{{ limesurvey_db_user }}',
+      'password' => '{{ limesurvey_db_password }}',
+      'charset' => 'utf8',
+      'tablePrefix' => 'lime_',
+    ),
+
+    'session' => array (
+      'sessionName'=>'LS-{{ lookup("password", "/dev/null length=16 chars=ascii_letters") }}'
+    ),
+    'request' => array(
+      'hostInfo' => '{{ limesurvey_http_proto }}://{{ limesurvey_domain }}',
+    ),	
+    'urlManager' => array(
+      'urlFormat' => 'path',
+      'rules' => array(
+      ),
+      'showScriptName' => false,
+    ),
+
+  ),
+
+  'config'=>array(
+    'debug' => 0,
+    'debugsql'=>0,
+    'auth_webserver_autocreate_user' => true,
+    'auth_webserver_autocreate_profile' => Array('full_name' => $_SERVER['HTTP_AUTH_CN'],'email' => $_SERVER['HTTP_AUTH_MAIL'],'lang'=>'fr'),
+    'auth_webserver_autocreate_permissions' => Array('surveys' => array('create'=>true,'read'=>false,'update'=>false,'delete'=>false)),
+  )
+);
+/* End of file config.php */
+/* Location: ./application/config/config.php */

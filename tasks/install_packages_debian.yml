@@ -1,0 +1,31 @@
+---
+- name: PACKAGE | Install sys (git and rsync) required package
+  apt:
+    state: present
+    name:
+      - git
+      - rsync
+
+- name: PACKAGE | Install PHP required packages
+  apt:
+    state: present
+    name:
+      - php-intl
+      - php-mbstring
+      - php-json
+      - php-xmlrpc
+      - php-soap
+      - php-soap
+      - php-gd
+      - php-xml
+      - php-cli
+      - php-zip
+      - php-curl
+      - php-ldap
+
+- name: PACKAGE | Install php-pgsql if postgres backend
+  apt:
+    state: present
+    name:
+      - php-pgsql
+  when: limesurvey_db_type == "postgresql"

@@ -1,0 +1,13 @@
+---
+# defaults file for install
+limesurvey_version: 5.1.14+210927
+limesurvey_http_rootdir: /var/www/
+limesurvey_domain: limesurvey.example.com
+limesurvey_http_user: www-data
+limesurvey_http_group: www-data
+limesurvey_http_proto: https
+limesurvey_db_type: postgresql
+limesurvey_db_host: localhost
+limesurvey_db_user: limesurvey
+limesurvey_db_password: limepassword
+limesurvey_db_name: limesurvey
