@@ -12,3 +12,6 @@ limesurvey_db_user: limesurvey
 limesurvey_db_password: limepassword
 limesurvey_db_name: limesurvey
 limesurvey_db_port: 5432
+limesurvey_webserver_auth: false
+limesurvey_webserver_auth_full_name: HTTP_AUTH_CN
+limesurvey_webserver_auth_email: HTTP_AUTH_MAIL
