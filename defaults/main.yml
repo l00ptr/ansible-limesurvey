@@ -15,3 +15,4 @@ limesurvey_db_port: 5432
 limesurvey_webserver_auth: false
 limesurvey_webserver_auth_full_name: HTTP_AUTH_CN
 limesurvey_webserver_auth_email: HTTP_AUTH_MAIL
+limesurvey_session_name_id: "{{ lookup('password', '/dev/null length=16 chars=ascii_letters') }}"

@@ -11,7 +11,7 @@ return array(
     ),
 
     'session' => array (
-      'sessionName'=>'LS-{{ lookup("password", "/dev/null length=16 chars=ascii_letters") }}'
+      'sessionName'=>'LS-{{ limesurvey_session_name_id }}'
     ),
     'request' => array(
       'hostInfo' => '{{ limesurvey_http_proto }}://{{ limesurvey_domain }}',
