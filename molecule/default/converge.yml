@@ -1,6 +1,8 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    limesurvey_session_name_id: DALIDALIBODALIBO
   pre_tasks:
     - name: Update apt cache.
       apt: update_cache=yes cache_valid_time=600
