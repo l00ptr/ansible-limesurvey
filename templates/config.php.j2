@@ -28,9 +28,11 @@ return array(
   'config'=>array(
     'debug' => 0,
     'debugsql'=>0,
+{% if limesurvey_webserver_auth %}
     'auth_webserver_autocreate_user' => true,
-    'auth_webserver_autocreate_profile' => Array('full_name' => $_SERVER['HTTP_AUTH_CN'],'email' => $_SERVER['HTTP_AUTH_MAIL'],'lang'=>'fr'),
-    'auth_webserver_autocreate_permissions' => Array('surveys' => array('create'=>true,'read'=>false,'update'=>false,'delete'=>false)),
+    'auth_webserver_autocreate_profile' => Array('full_name' => $_SERVER['{{ limesurvey_webserver_auth_full_name }}'],'email' => $_SERVER['{{ limesurvey_webserver_auth_mail }}'],'lang'=>'fr'),
+    'auth_webserver_autocreate_permissions' => Array('surveys' => array('create'=>true,'read'=>false,'update'=>true,'delete'=>false)),
+{% endif %}
   )
 );
 /* End of file config.php */
